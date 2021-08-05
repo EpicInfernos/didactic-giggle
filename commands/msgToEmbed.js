@@ -46,18 +46,18 @@ const { MessageReaction } = require("discord.js");
                             // console.log(message.member.user.id); // debug
                             console.log (message.guild.member.cache);
                             await reaction.message.guild.members.cache.get(message.member.user.id).roles.add(allowServerAccess);
-                            fetchedChannel.delete();
                             message.member.roles.remove(verifyRole);
                             message.member.roles.remove(PverifyRole);
                             message.guild.members.cache.get(message.member.user.id).send('You have been verified');
                             message.guild.members.cache.get(message.member.user.id).send('กดที่นี่เพื่อไปรับยศ --> ' + rolePickCH + '\n ***หมายเหตุ สายวิทย์-คณิตต้องกดรูปอะตอมทั้ง 2 อัน');
+                            fetchedChannel.delete();
                             console.log('(allowed)current user -->' + message.member.user.id);
                         } 
                         if (reaction.emoji.name === denyAccEmote) {
                             message.member.roles.remove(verifyRole);
                             message.member.roles.remove(PverifyRole);
-                            fetchedChannel.delete();
                             message.guild.members.cache.get(message.member.user.id).send('Your Verification has been denied');
+                            fetchedChannel.delete();
                             console.log('(denied) current user -->' + message.member.user.id);
                         } 
                     }
