@@ -55,7 +55,8 @@ module.exports = {
                             menUs.mentionUser(message, result, Discord);
                             // module.exports = { result1: result.id };
                             
-                        })
+                        }).catch();
+                        
                         
                             
                         //const vrChannel = message.guild.channels.cache.find(channel => channel.name == message.member + "-verify");
